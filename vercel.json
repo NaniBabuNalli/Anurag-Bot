@@ -12,12 +12,9 @@
       "dest": "/index.html"
     }
   ],
-  "buildCommand": false,
+  "buildCommand": null,
   "outputDirectory": ".",
-  "installCommand": false,
+  "installCommand": null,
   "framework": null,
-  "public": true,
-  "env": {
-    "GEMINI_API_KEY": "@gemini_api_key"
-  }
+  "public": true
 }
