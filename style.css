@@ -1,0 +1,125 @@
+/* 1. FIX: Corrected the font import URL */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root {
+    --au-blue: #004d9c; /* A deep blue often associated with universities */
+    --au-gold: #ffc300; /* Accent color */
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+}
+#chat-container {
+    max-width: 90%;
+    height: 80vh;
+    max-height: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+}
+#chat-log {
+    height: calc(100% - 100px); /* Adjust height for input area */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+.user-message {
+    background-color: var(--au-blue);
+    color: white;
+    border-radius: 18px 18px 2px 18px;
+    max-width: 85%;
+    transform: translateX(0);
+    animation: messageSlide 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+.bot-message {
+    background-color: #e2e8f0;
+    color: #1f2937;
+    border-radius: 18px 18px 18px 2px;
+    max-width: 85%;
+    transform: translateX(0);
+    animation: messageSlide 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.message-timestamp {
+    font-size: 0.7rem;
+    color: #6b7280;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #6b7280;
+    border-radius: 50%;
+    animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-4px);
+    }
+}
+
+.message-reactions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.bot-message-container:hover .message-reactions {
+    opacity: 1;
+}
+
+.reaction-button {
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color: #f3f4f6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.reaction-button:hover {
+    background-color: #e5e7eb;
+}
+
+.reaction-button.active {
+    background-color: var(--au-blue);
+    color: white;
+}
+.au-header {
+    background-color: var(--au-blue);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+/* 2. FIX: Removed extraneous closing brace (}) */

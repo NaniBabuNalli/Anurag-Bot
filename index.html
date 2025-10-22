@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag University Smart Chatbot</title>
+    <!-- Load Tailwind CSS for utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file (styles.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 md:p-8">
+
+    <div id="chat-container" class="w-full md:w-3/4 lg:w-1/2 rounded-xl flex flex-col transition-all duration-300">
+        <!-- Header: Custom Logo is implemented here -->
+        <div class="au-header p-4 flex justify-between items-center shadow-lg">
+            <h1 class="text-xl font-bold flex items-center">
+                <!-- Custom Chatbot Logo -->
+                <img src="https://ik.imagekit.io/syustaging/SYU_PREPROD/Logo_ccDwxhycta.webp" alt="Anurag University Logo" class="h-8 w-8 mr-2 rounded-full" />
+                AnuragBot - University Assistant
+            </h1>
+            <select id="language-select" class="bg-white text-gray-800 p-2 rounded-lg text-sm font-medium border border-gray-300 shadow-sm focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition">
+                <option value="English">English</option>
+                <option value="Telugu">Telugu (తెలుగు)</option>
+                <option value="Hindi">Hindi (हिंदी)</option>
+            </select>
+        </div>
+
+        <!-- Chat Log -->
+        <div id="chat-log" class="flex-grow p-4 space-y-4">
+            <!-- Initial Bot Message -->
+            <div class="flex justify-start">
+                <div class="bot-message p-3 shadow-md">
+                    <p id="initial-message" class="text-sm">Hello! I am AnuragBot, your AI guide for Anurag University. Please select your preferred language above, and ask me anything about admissions, programs, or campus life!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 border-t border-gray-200">
+            <form id="chat-form" class="flex space-x-3">
+                <input type="text" id="user-input" placeholder="Ask a question about Anurag University..." required class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition disabled:bg-gray-100">
+                <button type="submit" id="send-button" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg transition duration-200 shadow-md flex items-center justify-center disabled:bg-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l.49-1.47a1 1 0 01.696-.704l12.723-4.241a1 1 0 000-1.89l-12.723-4.241a1 1 0 01-.696-.704l-.49-1.47a1 1 0 00-1.169-1.409l7-14z"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file (script.js) -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
