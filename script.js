@@ -52,9 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const initialMessage = document.getElementById('initial-message');
 
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent`;
-    /* IMPORTANT: When running locally, you must replace the empty string below 
-       with your actual Gemini API key. */
-    const API_KEY = "AIzaSyCAlLcYZ8hOjPTNjCclyV3t8mW0fgIne0g"; 
+    const API_KEY = process.env.GEMINI_API_KEY;
 
     let isTyping = false; // Flag to prevent multiple concurrent requests
 
