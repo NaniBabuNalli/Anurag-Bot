@@ -11,5 +11,13 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "buildCommand": false,
+  "outputDirectory": ".",
+  "installCommand": false,
+  "framework": null,
+  "public": true,
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key"
+  }
 }
