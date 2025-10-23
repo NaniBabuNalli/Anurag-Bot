@@ -1,7 +1,8 @@
-// --- Firebase Imports and Setup ---
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+// Initialize global state
+const state = {
+    chatHistory: [],
+    isTyping: false
+};
 
 // Global variables provided by the Canvas environment (replace these with actual values if not using Canvas)
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
